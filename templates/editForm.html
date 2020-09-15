@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>Edit Form</title>
+</head>
+
+<body>
+    <h2>Update your Details here</h2>
+    <form action="/insert" method="POST">
+        <table>
+            <tr>
+                <td>Title:</td>
+                <td><input type="text" name="title" placeholder={{row.1}} /></td>
+            </tr>
+            <br />
+
+            <tr>
+                <td>Details:</td>
+                <td><input type="text" name="details" placeholder={{row.2}} /></td>
+            </tr>
+            <br />
+
+            <tr>
+                <td>Date:</td>
+                <td><input type="date" name="date" value={{row.3}} /></td>
+            </tr>
+            <br />
+
+            <tr>
+                <td><input type="submit" value="Update" name="send" /></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>To-do List</title>
+  </head>
+
+  <body>
+    <form action="/insert" method="POST">
+      <table>
+        <tr>
+          <td>Title:</td>
+          <td><input type="text" name="title" /></td>
+        </tr>
+        <br />
+
+        <tr>
+          <td>Details:</td>
+          <td><input type="text" name="details" /></td>
+        </tr>
+        <br />
+
+        <tr>
+          <td>Date:</td>
+          <td><input type="date" name="date" /></td>
+        </tr>
+        <br />
+
+        <tr>
+          <td><input type="submit" value="insert" name="send" /></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

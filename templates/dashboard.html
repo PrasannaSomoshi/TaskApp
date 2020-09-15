@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <h1>Welcome to User Dashboard</h1>
+
+    <table cellpadding="10" cellspacing="5" border="2">
+        <tr>
+            <td>Title</td>
+            <td>Details</td>
+            <td>Date</td>
+            <td>Update</td>
+            <td>Delete</td>
+
+        </tr>
+
+        {% for i in row: %}
+
+        <tr>
+            <td>{{i.1}}</td>
+            <td>{{i.2}}</td>
+            <td>{{i.3}}</td>
+            <td><a href="/edit/{{i.0}}">Edit</a></td>
+            <td><a href="/delete/{{i.0}}">Delete</a></td>
+        </tr>
+
+        {% endfor %}
+
+
+    </table>
+</body>
+
+</html>
