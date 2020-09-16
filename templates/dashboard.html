@@ -2,11 +2,16 @@
 
 <head>
     <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
 </head>
 
 <body>
-    <h1>Welcome to User Dashboard</h1>
+    <center>
+        <h1>Welcome to User Dashboard</h1>
+    </center><br>
 
+    <!-- OG Table 
     <table cellpadding="10" cellspacing="5" border="2">
         <tr>
             <td>Title</td>
@@ -30,7 +35,34 @@
         {% endfor %}
 
 
+    </table> -->
+
+    <table class="table table-dark" border="2">
+        <thead>
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Details</th>
+                <th scope="col">Date</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in row: %}
+
+            <tr>
+                <td>{{i.1}}</td>
+                <td>{{i.2}}</td>
+                <td>{{i.3}}</td>
+                <td><a href="/edit/{{i.0}}">Edit</a></td>
+                <td><a href="/delete/{{i.0}}">Delete</a></td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
     </table>
+
+
 </body>
 
 </html>

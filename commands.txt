@@ -1,0 +1,12 @@
+1) touch .gitignore
+   git config user.name PrasannaSomoshi
+   git config user.email "prasannasomoshi@gmail.com"
+2) git init
+3) git add .
+4) git commit -m "Initial Commit"
+5) git status #Just to see
+6) Generating SSH key - ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+7) tail <path> 	#Add this key to your github account SSH keys
+8) git remote add origin <ssh url.git>
+9) git push origin master
+
