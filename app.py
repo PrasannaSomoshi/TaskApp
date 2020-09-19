@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect
 import pymysql as p
 
 app = Flask(__name__)
-""" 
+"""
 Everything should be written within this
 """
 
@@ -96,6 +96,35 @@ def edit(rid):
     except Exception:
 
         return "<h1>Connection Failed<h2>"
+
+
+# update task
+@app.route('/update', methods=['POST', 'GET'])
+def update():
+    if request.method == "POST":
+        title = request.form['title']
+        details = request.form['details']
+        date = request.form['date']
+        rid = request.form['rid']
+
+        serverName = "localhost"
+        userName = "root"
+        password = ""
+        dbName = "todo"
+
+        try:
+            db = p.connect(serverName, userName, password, dbName)
+            cr = db.cursor()
+            sql = "UPDATE task SET title='{}', detail='{}', date='{}' WHERE id = '{}'".format(
+                title, details, date, rid)
+            cr.execute(sql)
+            db.commit()
+            db.close()
+
+            return redirect("/dashboard")
+        except Exception:
+            db.rollback()
+            return "Error in connection"
 
 
 app.run()

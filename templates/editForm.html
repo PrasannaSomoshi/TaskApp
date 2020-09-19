@@ -1,14 +1,14 @@
 <html>
 
 <head>
-    <title>Edit Form</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+  <title>Edit Form</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
 </head>
 
 <body>
 
-    <!-- <form action="/insert" method="POST">
+  <!-- <form action="/insert" method="POST">
       <table>
         <tr>
           <td>Title:</td>
@@ -34,34 +34,44 @@
       </table>
     </form> -->
 
-    <center>
-        <h2>Update your Details here</h2>
-    </center><br>
+  <center>
+    <h2>Update your Details here</h2>
+  </center><br>
 
-    <form action="/insert" method="POST">
-        <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Title</label>
-            <div class="col-sm-5">
-                <input type="text" class="form-control" placeholder="{{row.1}}" id="">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Details</label>
-            <div class="col-sm-5">
-                <input type="text" class="form-control" placeholder="{{row.2}}" id="">
-            </div>
-        </div>
+  <form action="/update" method="POST">
 
-        <div class=" form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Date</label>
-            <div class="col-sm-5">
-                <input type="date" class="form-control" placeholder="{{row.3}}" id="">
-            </div>
-        </div>
+    <div class="form-group row">
 
-        <button type="submit" class="btn btn-primary">Save</button>
+      <label for="inputEmail3" class="col-sm-2 col-form-label"></label>
+      <div class="col-sm-5">
+        <input type="hidden" class="form-control" name="rid" value="{{row.0}}" id="">
+      </div>
+    </div>
 
-    </form>
+
+    <div class="form-group row">
+      <label for="inputEmail3" class="col-sm-2 col-form-label">Title</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" name="title" value="{{row.1}}" id="">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Details</label>
+      <div class="col-sm-5">
+        <input type="text" class="form-control" name="details" value="{{row.2}}" id="">
+      </div>
+    </div>
+
+    <div class=" form-group row">
+      <label for="inputPassword3" class="col-sm-2 col-form-label">Date</label>
+      <div class="col-sm-5">
+        <input type="date" class="form-control" name="date" value="{{row.3}}" id="">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+
+  </form>
 
 
 
